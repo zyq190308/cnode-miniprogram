@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="top-bar">
+    <!-- topBar -->
+    <view class="top-bar-item {{params.active===item.tab?'active':''}}"
+          wx:for="{{tabs}}" wx:for-item="item" wx:key="{{index}}" bindtap="changeTab" data-tab="{{ item.tab }}">
+          {{item.name}}
+    </view>
+  </view>
+
+  <!-- main -->
+  <view class="content">
+    <view class="cell" wx:for="{{ articles }}" wx:for-item="article" wx:key="{{index}}" bindtap="jump" data-id="{{ article.id }}">
+      <image src="{{ article.author.avatar_url }}" class="img-style" />
+      <text class="type">精华</text>
+      <text class="title">{{article.title}}</text>
+    </view>
+  </view>
+</view>

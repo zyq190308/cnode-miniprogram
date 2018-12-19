@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "CNODE",
+    "navigationBarTextStyle": "#fff"
+  }
+}

@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<wxs src="../../filter/index.wxs" module="index" />
+<view class="detail">
+    <view class="content">
+        <view class="header">
+            <text class="title"><text class="top" wx:if="{{detail.top}}">置顶</text>{{ detail.title }}</text>
+            <view class="changes">
+                <text class="change-text">{{ index.replyTime(detail.last_reply_at) }}</text>
+                <text class="change-text">作者 {{ detail.author.loginname }}</text>
+                <text class="change-text">{{ detail.visit_count }}次浏览</text>
+                <text class="change-text">{{ index.from(detail.tab) }}</text>
+            </view>
+        </view>
+        <view class="main">
+            <view class="main-topic">
+                <template is="wxParse" data="{{ wxParseData:article.nodes }}"/>
+            </view>
+        </view>
+    </view>
+</view>

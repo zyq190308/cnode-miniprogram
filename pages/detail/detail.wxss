@@ -1,0 +1,63 @@
+/* pages/detail/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page {
+    background-color: #e1e1e1;
+}
+.detail {
+    /* width: 100%; */
+    box-sizing: border-box;
+    margin: 10rpx;
+}
+.content {
+
+}
+
+.header {
+    background-color: #fff;
+    padding: 20rpx;
+    border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -ms-border-radius: 3px 3px 0 0;
+    -o-border-radius: 3px 3px 0 0;
+}
+.top {
+    background: #80bd01;
+    padding: 4rpx 8px;
+    border-radius: 6rpx;
+    color: #fff;
+    font-size: 24rpx;
+    -webkit-border-radius: 6rpx;
+    -moz-border-radius: 6rpx;
+    -ms-border-radius: 6rpx;
+    -o-border-radius: 6rpx;
+}
+.title {
+    font-size: 44rpx;
+    font-weight: 700;
+    margin: 16rpx 0;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 75%;
+    line-height: 130%;
+}
+.changes {
+    font-size: 24rpx;
+    letter-spacing: 3rpx;
+    color: #838383;
+}
+
+.change-text :before {
+    content: "•";
+}
+
+.main {
+    background-color: #fff;
+    padding: 20rpx;
+    border-top: 2rpx solid #e5e5e5;
+}
+
+.main-topic {
+    margin: 0 20rpx;
+    line-height: 2em;
+}
