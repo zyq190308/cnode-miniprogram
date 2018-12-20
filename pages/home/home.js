@@ -1,4 +1,5 @@
 // pages/home/home.js
+import api from '../../api/index';
 Page({
   data: {
     tabs: [{
@@ -37,10 +38,11 @@ Page({
       title: '加载中',
     });
     let that = this;
-    let url = `https://cnodejs.org/api/v1/topics?page=${this.data.params.page}&limit=${this.data.params.limit}&tab=${this.data.params.active}`;
-    wx.request({
-      url: url,
-      success(res) {
+    api.getList({
+      page: this.data.params.page,
+      limit: this.data.params.limit,
+      tab: this.data.params.active
+    }, res => {
         wx.hideLoading();
         wx.stopPullDownRefresh();
         if(that.data.type === 'new') {
@@ -52,7 +54,6 @@ Page({
             articles: that.data.articles.concat(res.data.data)
           });
         }
-      }
     });
   },
   changeTab(e) {

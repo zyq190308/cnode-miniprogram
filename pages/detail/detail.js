@@ -1,5 +1,6 @@
 // pages/detail/detail.js
-var WxParse = require('../../wxParse/wxParse.js');
+import api from '../../api/index';
+let WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     id: '',
@@ -13,10 +14,9 @@ Page({
   },
   getDetail() {
     let that = this;
-    let url = `https://cnodejs.org/api/v1/topic/${this.data.id}`;
-    wx.request({
-      url: url,
-      success(res) {
+    api.getDetail({
+      id: this.data.id
+    }, res => {
         wx.hideLoading();
         wx.stopPullDownRefresh();
         var temp = WxParse.wxParse('article', 'html', res.data.data.content, that, 5);
@@ -24,7 +24,6 @@ Page({
           detail: res.data.data,
           article: temp
         });
-      }
     });
   },
   onReady: function() {
