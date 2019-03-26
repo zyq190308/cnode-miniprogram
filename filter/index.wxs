@@ -7,32 +7,32 @@ var replyTime = function(value) {
     if (time < 0) {
         return '';
     } else if ((time / 1000 < 30)) {
-        return '发布于刚刚';
+        return '刚刚';
     } else if (time / 1000 < 60) {
-        return '发布于'+parseInt((time / 1000)) + '秒前';
+        return parseInt((time / 1000)) + '秒前';
     } else if ((time / 60000) < 60) {
-        return '发布于'+parseInt((time / 60000)) + '分钟前';
+        return parseInt((time / 60000)) + '分钟前';
     } else if ((time / 3600000) < 24) {
-        return '发布于'+parseInt(time / 3600000) + '小时前';
+        return parseInt(time / 3600000) + '小时前';
     } else if ((time / 86400000) < 31) {
-        return '发布于'+parseInt(time / 86400000) + '天前';
+        return parseInt(time / 86400000) + '天前';
     } else if ((time / 2592000000) < 12) {
-        return '发布于'+parseInt(time / 2592000000) + '月前';
+        return parseInt(time / 2592000000) + '月前';
     } else {
-        return '发布于'+parseInt(time / 31536000000) + '年前';
+        return parseInt(time / 31536000000) + '年前';
     }
 };
 
 var from = function(value) {
     switch(value) {
         case 'share':
-            return '来自 分享';
+            return '分享';
         case 'good':
-            return '来自 精华';
+            return '精华';
         case 'job':
-            return '来自 招聘';
+            return '招聘';
         case 'ask':
-            return '来自 问答';
+            return '问答';
     }
 }
 

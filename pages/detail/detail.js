@@ -13,14 +13,13 @@ Page({
     });
   },
   getDetail() {
-    let that = this;
     api.getDetail({
       id: this.data.id
-    }, res => {
+    }).then(res => {
         wx.hideLoading();
         wx.stopPullDownRefresh();
-        var temp = WxParse.wxParse('article', 'html', res.data.data.content, that, 5);
-        that.setData({
+        let temp = WxParse.wxParse('article', 'html', res.data.data.content, this, 5);
+        this.setData({
           detail: res.data.data,
           article: temp
         });

@@ -29,12 +29,12 @@
   margin-top: 60rpx;
   height: 100%;
   overflow: auto;
-
 }
 
 .cell {
   padding: 10rpx;
   border-bottom: 1rpx solid #eeeeee;
+  overflow: hidden;
 }
 
 .img-style {
@@ -62,4 +62,23 @@
   -moz-border-radius: 8rpx;
   -ms-border-radius: 8rpx;
   -o-border-radius: 8rpx;
+}
+
+.title {
+  display: inline-block;
+  width: 480rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.time {
+  float: right;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: gray;
+  margin-top: 20rpx;
+  /* line-height: 44rpx; */
 }

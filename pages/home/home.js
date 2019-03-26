@@ -37,21 +37,20 @@ Page({
     wx.showLoading({
       title: '加载中',
     });
-    let that = this;
     api.getList({
       page: this.data.params.page,
       limit: this.data.params.limit,
       tab: this.data.params.active
-    }, res => {
+    }).then(res => {
         wx.hideLoading();
         wx.stopPullDownRefresh();
-        if(that.data.type === 'new') {
-          that.setData({
+        if(this.data.type === 'new') {
+          this.setData({
             articles: res.data.data
           });
         }else {
-          that.setData({
-            articles: that.data.articles.concat(res.data.data)
+          this.setData({
+            articles: this.data.articles.concat(res.data.data)
           });
         }
     });
